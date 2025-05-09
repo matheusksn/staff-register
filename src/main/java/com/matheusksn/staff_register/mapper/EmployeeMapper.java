@@ -5,6 +5,9 @@ import com.matheusksn.staff_register.dto.EmployeeRequest;
 import com.matheusksn.staff_register.dto.EmployeeResponse;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class EmployeeMapper {
 
@@ -39,6 +42,12 @@ public class EmployeeMapper {
         response.setAdmissionDate(entity.getAdmissionDate());
         response.setTerminationDate(entity.getTerminationDate());
         return response;
+    }
+
+    public List<EmployeeResponse> toResponseList(List<Employee> entities) {
+        return entities.stream()
+                .map(this::toResponse)
+                .collect(Collectors.toList());
     }
 
     public EmployeeResponse partialUpdate(Employee entity, EmployeeRequest dto) {

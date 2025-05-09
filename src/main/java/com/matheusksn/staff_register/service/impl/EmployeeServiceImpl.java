@@ -24,7 +24,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeMapper mapper;
     private final DepartmentService departmentService;
 
-    public EmployeeServiceImpl(EmployeeRepository employeeRepository, EmployeeMapper mapper, DepartmentService departmentService) {
+    public EmployeeServiceImpl(EmployeeRepository employeeRepository, EmployeeMapper mapper, DepartmentServiceImpl departmentService) {
         this.employeeRepository = employeeRepository;
         this.mapper = mapper;
         this.departmentService = departmentService;

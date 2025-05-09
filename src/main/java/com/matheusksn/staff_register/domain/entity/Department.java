@@ -16,4 +16,15 @@ public class Department {
     @NotBlank
     private String name;
 
+    public void setId(Long departmentId) {
+    }
+    public Long getId() {
+        return id;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getName() {
+        return name;
+    }
 }
